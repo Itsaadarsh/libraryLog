@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Library System</title>
+</head>
+
+<body class="m-4 bg-secondary">
+  <div class="container p-4 bg-dark rounded">
+    <h1 id="heading" class="pb-2 text-center text-danger rounded"><b>LIBRARY BOOK MANAGMENT</b></h1>
+    <form id="libForm" class="main-form needs-validation mt-4" novalidate>
+      <div id="sName" class="form-group">
+        <input class="form-control bg-light" type="text" id="stuName" placeholder="Name   (Ex : John Sharma)" pattern="[A-Za-z ]{1,40}" required>
+        <div class="invalid-feedback">Don't use any character or numbers</div>
+      </div>
+      <div id="sID" class="form-group">
+        <input class="form-control" type="text" id="stuId" placeholder="Student ID  (Ex : 202)" pattern="[0-9]{1,10}" required>
+        <div class="invalid-feedback">Enter your ID</div>
+      </div>
+      <div id="bName" class="form-group">
+        <input class="form-control" type="text" id="bookName" placeholder="Book Name  (Ex : Bitter Truth)" required>
+        <div class="invalid-feedback">Enter your Book Name</div>
+      </div>
+      <div id="bID" class="form-group">
+        <input class="form-control" type="text" id="bookID" placeholder="Book ID  (Ex : D1001)" pattern="[A-Za-z][0-9]{1,10}"required>
+        <div class="invalid-feedback">Enter your Book ID</div>
+      </div>
+      <div id="dob" class="form-group">
+        <input class="form-control" type="date" id="dateOB" required>
+        <div class="invalid-feedback">Enter Today's Date</div>
+      </div>
+      <div class="form-group d-flex mt-5 justify-content-around">
+        <button type="submit" class="btn btn-secondary btn-lg p-3"><b>SUBMIT</b></button>
+        <button type="button" class="btn btn-secondary btn-lg p-3"><b>BOOK DATA</b></button>
+      </div>
+    </form>
+    <div class=""  style="border:5px #BB2124 solid">
+      <div class="d-flex justify-content-between">
+        <h2 class="text-danger pt-3 pl-3"><b>DATA LOG</b></h2>
+        <input type="text" class="form-control-sm m-3" placeholder="Filter">
+      </div>
+      <table class="table table-hover table-responsive-sm bg-secondary">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>NAME</th>
+            <th>STD.ID</th>
+            <th>BK.NAME</th>
+            <th>BK.ID</th>
+            <th>DATA</th>
+            <th>CLEAR</th>
+          </tr>
+        </thead>
+        <tbody class="text-white">
+          <tr>
+            <td>1</td>
+            <td>Aadarsh</td>
+            <td>3939</td>
+            <td>The monk who sold his ferrai</td>
+            <td>D101</td>
+            <td>11-03-2020</td>
+            <td>X</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app5.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
