@@ -8,3 +8,4 @@ form.addEventListener('submit', function (e) {
 });
 
 const aadi = 'checking';
+console.log(aadi);
