@@ -6,3 +6,5 @@ form.addEventListener('submit', function (e) {
   }
   form.classList.add('was-validated');
 });
+
+const aadi = 'checking';
