@@ -1,7 +1,7 @@
 // Log Constructor
 class UILog {
-  constructor(sName, sID, bName, bID, dateB, sNO) {
-    Object.assign(this, { sName, sID, bName, bID, dateB, sNO });
+  constructor(sName, sID, bName, bID, dateB) {
+    Object.assign(this, { sName, sID, bName, bID, dateB });
   }
   createTable() {
     // Adding Table Rows
@@ -9,8 +9,9 @@ class UILog {
     alertSuccess.classList.add('d-block');
     const tableAdd = document.querySelector('#tableList');
     const tableRow = document.createElement('tr');
+    tableRow.className = 'tbRows';
     tableRow.innerHTML = `
-    <td>${this.sNO}</td>
+    <td></td>
     <td>${this.sName}</td>
     <td>${this.sID}</td>
     <td>${this.bName}</td>
@@ -18,6 +19,11 @@ class UILog {
     <td>${this.dateB}</td>
     <td><a href="#" class="clearBtn container" onclick="removingRow(event)">X<a></td>`;
     tableAdd.appendChild(tableRow);
+    document.querySelector('#subBtn').disabled = true;
+    for (let i = 1; i <= tableAdd.rows.length; i++) {
+      let x = tableAdd.rows[i - 1].cells;
+      x[0].innerHTML = i;
+    }
     //  Clearing values once added
     setTimeout(function () {
       document.querySelector('#alSuc').className = 'alert bg-success d-none';
@@ -27,13 +33,13 @@ class UILog {
       document.querySelector('#bookID').value = '';
       document.querySelector('#dateOB').value = '';
       document.querySelector('#libForm').classList.remove('was-validated');
+      document.querySelector('#subBtn').disabled = false;
     }, 2500);
   }
 }
 
 // Submit Buttom function
 var form = document.querySelector('#libForm');
-var sNO = 0;
 var callingLog;
 form.addEventListener('submit', function (e) {
   if (form.checkValidity() === false) {
@@ -47,8 +53,7 @@ form.addEventListener('submit', function (e) {
       bName = document.querySelector('#bookName').value,
       bID = document.querySelector('#bookID').value,
       dateB = document.querySelector('#dateOB').value;
-    sNO += 1;
-    callingLog = new UILog(sName, sID, bName, bID, dateB, sNO);
+    callingLog = new UILog(sName, sID, bName, bID, dateB);
     callingLog.createTable();
   }
   form.classList.add('was-validated');
@@ -62,10 +67,31 @@ bookBtn.addEventListener('click', function (e) {
   } else {
     const tableShow = document.querySelector('#tableDiv');
     tableShow.classList.add('d-block');
+    const filterArea = document.querySelector('#filterText');
+    filterArea.addEventListener('keyup', function (e) {
+      const filterValues = e.target.value.toLowerCase();
+      document.querySelectorAll('.tbRows').forEach(function () {
+        let name = callingLog.sName;
+        let ID = callingLog.sID;
+        if (
+          name.toLowerCase().indexOf(filterValues) ||
+          ID.toLowerCase().indexOf(filterValues) != -1
+        ) {
+          document.querySelector('.tbRows').classList.add('d-none');
+        } else {
+          document.querySelector('.tbRows').classList.add('d-block');
+        }
+      });
+    });
   }
 });
 
+// Clearing rows in log
 function removingRow(e) {
   e.target.parentElement.parentElement.remove();
+  for (let i = 1; i <= document.querySelector('#tableList').rows.length; i++) {
+    let x = document.querySelector('#tableList').rows[i - 1].cells;
+    x[0].innerHTML = i;
+  }
   e.preventDefault();
 }
