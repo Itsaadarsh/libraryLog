@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -39,65 +36,27 @@
           Added to Book Log!
         </div>
         <div id="stName" class="form-group">
-          <input
-            class="form-control bg-light"
-            type="text"
-            id="stuName"
-            placeholder="Name   (Ex : John Sharma)"
-            pattern="[A-Za-z ]{1,40}"
-            required
-          />
+          <input class="form-control bg-light" type="text" id="stuName" placeholder="Name   (Ex : John Sharma)" pattern="[A-Za-z ]{1,40}" required />
           <div class="invalid-feedback">Don't use any character or numbers</div>
         </div>
         <div id="stID" class="form-group">
-          <input
-            class="form-control"
-            type="text"
-            id="stuID"
-            placeholder="Student ID  (Ex : 202)"
-            pattern="[0-9]{1,10}"
-            required
-          />
+          <input class="form-control" type="text" id="stuID" placeholder="Student ID  (Ex : 202)" pattern="[0-9]{1,10}" required />
           <div class="invalid-feedback">Enter your ID</div>
         </div>
         <div id="bkName" class="form-group">
-          <input
-            class="form-control"
-            type="text"
-            id="bookName"
-            placeholder="Book Name  (Ex : Bitter Truth)"
-            required
-          />
+          <input class="form-control" type="text" id="bookName" placeholder="Book Name  (Ex : Bitter Truth)" required />
           <div class="invalid-feedback">Enter your Book Name</div>
         </div>
         <div id="bkID" class="form-group">
-          <input
-            class="form-control"
-            type="text"
-            id="bookID"
-            placeholder="Book ID  (Ex : D1001)"
-            pattern="[A-Za-z][0-9]{1,10}"
-            required
-          />
+          <input class="form-control" type="text" id="bookID" placeholder="Book ID  (Ex : X1001)" pattern="[A-Za-z][0-9]{1,10}" required />
           <div class="invalid-feedback">Enter your Book ID</div>
         </div>
         <div id="dob" class="form-group">
-          <input
-            class="form-control"
-            type="text"
-            id="dateOB"
-            placeholder="Date (DD/MM/YYYY)"
-            onfocus="(this.type='date')"
-            required
-          />
+          <input class="form-control" type="text" id="dateOB" placeholder="Date (DD/MM/YYYY)" onfocus="(this.type='date')" required />
           <div class="invalid-feedback">Enter Today's Date</div>
         </div>
         <div class="form-group d-flex mt-5 justify-content-around">
-          <button
-            id="subBtn"
-            type="submit"
-            class="btn btn-secondary btn-lg p-3"
-          >
+          <button id="subBtn" type="submit" class="btn btn-secondary btn-lg p-3">
             <b>SUBMIT</b>
           </button>
           <button id="bkBtn" type="button" class="btn btn-secondary btn-lg p-3">
@@ -108,27 +67,14 @@
       <!-- -----------
       TABLE DIV
     --------------- -->
-      <div
-        id="tableDiv"
-        class="container d-none"
-        style="border: 5px #bb2124 solid;"
-      >
+      <div id="tableDiv" class="container d-none" style="border: 5px #bb2124 solid;">
         <div class="d-flex justify-content-between">
-          <h2
-            class="container d-none d-md-block d-lg-block text-danger pt-3 pl-3"
-          >
+          <h2 class="container d-none d-md-block d-lg-block text-danger pt-3 pl-3">
             <b>DATA LOG</b>
           </h2>
-          <input
-            id="filterText"
-            type="text"
-            class="form-control-sm m-3"
-            placeholder="Filter"
-          />
+          <input id="filterText" type="text" class="form-control-sm m-3" placeholder="Filter" />
         </div>
-        <table
-          class="table table-hover table-responsive-sm table-responsive-md bg-secondary"
-        >
+        <table class="table table-hover table-responsive-sm table-responsive-md bg-secondary">
           <thead class="thead-dark">
             <tr>
               <th>#</th>
